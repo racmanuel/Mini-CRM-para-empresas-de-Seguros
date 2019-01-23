@@ -10,7 +10,7 @@
     "crm",
     "php"
   ],
-  "author": "Manuel Ramirez Coronel",
+  "author": "Manuel Ramirez Coronel,Kevin Orlando Nava Huitron, Jonathan Othoniel Vargas Armendariz",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.4.0",
