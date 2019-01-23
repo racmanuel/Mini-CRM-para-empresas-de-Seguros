@@ -1,4 +1,4 @@
-<?php include 'head.php'; ?>
+<?php include 'config/head.php'; ?>
 <body class="hold-transition skin-red sidebar-mini">
   <div class="box box-primary">
     <div class="box-header with-border">
@@ -84,4 +84,4 @@
     </div>
     <!-- /.box-body -->
   </div>
-<?php include 'body'; ?>
+<?php include 'config/body'; ?>

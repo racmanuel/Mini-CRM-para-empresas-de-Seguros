@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php include 'head.php'; ?>
+<?php include 'config/head.php'; ?>
 <!--
 BODY TAG OPTIONS:
 =================
@@ -365,7 +365,7 @@ desired effect
     <div class="control-sidebar-bg"></div>
   </div>
   <!-- ./wrapper -->
-<?php include 'body.php'; ?>
+<?php include 'config/body.php'; ?>
 <!-- Calls to Jquery Refresh -->
 <script src="js/calls.js" charset="utf-8"></script>
 </body>

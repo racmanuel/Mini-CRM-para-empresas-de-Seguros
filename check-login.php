@@ -1,23 +1,32 @@
 <?php
 session_start();
 ?>
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Check Login and create session</title>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  </head>
-
-  <body>
-  <div class="container">
-
+<?php include 'config/head.php'; ?>
+  <body class="hold-transition login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="index.php"><b>Segurin</b>CRM</a>
+      </div>
+      <!-- /.login-logo -->
+      <div class="login-box-body">
+        <div class='col'>
+          <div class='box box-default'>
+            <div class='box-header'>
+              <i class='fa fa-bullhorn'></i>
+                <h3 class='box-title'>Alerta</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class='box-body'>
+              <div class='callout callout-danger'>
+                <h4>Email o Contraseña incorrectos!</h4>
+                <p><a href='index.php'><strong>Porfavor intentelo de nuevo!</strong></a></p></div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </div>
+        </div>
 <?php
 
 	// Connection info. file
@@ -57,7 +66,11 @@ session_start();
 		$_SESSION['expire'] = $_SESSION['start'] + (1 * 60) ;
 		header('Location: crm.php');
 	} else {
-		echo "<div class='alert alert-danger' role='alert'>Email or Password are incorrects!
-		<p><a href='login.html'><strong>Please try again!</strong></a></p></div>";
+		echo "
+
+    </div>";
 	}
 ?>
+<?php include 'config/body.php'; ?>
+</body>
+</html>
