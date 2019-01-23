@@ -8,25 +8,8 @@ session_start();
         <a href="index.php"><b>Segurin</b>CRM</a>
       </div>
       <!-- /.login-logo -->
-      <div class="login-box-body">
-        <div class='col'>
-          <div class='box box-default'>
-            <div class='box-header'>
-              <i class='fa fa-bullhorn'></i>
-                <h3 class='box-title'>Alerta</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class='box-body'>
-              <div class='callout callout-danger'>
-                <h4>Email o Contraseña incorrectos!</h4>
-                <p><a href='index.php'><strong>Porfavor intentelo de nuevo!</strong></a></p></div>
-                </div>
-              </div>
-              <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-          </div>
-        </div>
+
+
 <?php
 
 	// Connection info. file
@@ -62,15 +45,33 @@ session_start();
     session_start();
 		$_SESSION['loggedin'] = true;
 		$_SESSION['name'] = $row['Name'];
+    $_SESSION['email'] = $row['Email'];
 		$_SESSION['start'] = time();
 		$_SESSION['expire'] = $_SESSION['start'] + (1 * 60) ;
 		header('Location: crm.php');
 	} else {
 		echo "
-
-    </div>";
+    <div class='login-box-body'>
+      <div class='col'>
+        <div class='box box-default'>
+          <div class='box-header'>
+            <i class='fa fa-bullhorn'></i>
+              <h3 class='box-title'>Alerta</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class='box-body'>
+            <div class='callout callout-danger'>
+              <h4>Email o Contraseña incorrectos!</h4>
+              <p><a href='index.php'><strong>Porfavor intentelo de nuevo!</strong></a></p></div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->";
 	}
 ?>
+</div>
+</div>
 <?php include 'config/body.php'; ?>
 </body>
 </html>

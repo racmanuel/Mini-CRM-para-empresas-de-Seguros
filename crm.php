@@ -158,11 +158,11 @@ desired effect
                 <li class="user-header">
                   <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
                   <p>
-                    Alexander Pierce - Web Developer
-                    <small>Member since Nov. 2012</small>
+                    <?php echo $_SESSION['name']; ?>
+                    <small><?php echo $_SESSION['email']; ?></small>
                   </p>
                 </li>
-                <!-- Menu Body -->
+                <!-- Menu Body
                 <li class="user-body">
                   <div class="row">
                     <div class="col-xs-4 text-center">
@@ -175,15 +175,15 @@ desired effect
                       <a href="#">Friends</a>
                     </div>
                   </div>
-                  <!-- /.row -->
+                  /.row -->
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="edit-profile.php" class="btn btn-default btn-flat">Editar Perfil</a>
                   </div>
                   <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="logout.php" class="btn btn-default btn-flat">Cerrar Sesion</a>
                   </div>
                 </li>
               </ul>

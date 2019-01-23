@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
   <head>
     <title>Edit profile page</title>
-	
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,11 +14,11 @@ session_start();
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
-  
-  <body>      
+
+  <body>
     <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
-    {  
+    {
     } else {
         echo "<div class='alert alert-danger' role='alert'>
         <h4>You need to login to access this page.</h4>
@@ -26,13 +26,13 @@ session_start();
         exit;
     }
         // checking the time now when home page starts
-        $now = time();            
+        $now = time();
         if ($now > $_SESSION['expire'] )
         {
             session_destroy();
             echo "<div class='alert alert-danger' role='alert'>
             <h4>Your session has expire!</h4>
-            <p><a href='login.html'>Login Here</a></p></div>";
+            <p><a href='index.php'>Login Here</a></p></div>";
             exit;
         }
     ?>
