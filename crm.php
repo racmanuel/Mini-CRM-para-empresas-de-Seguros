@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -8,20 +11,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>SegurinCRM</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="node_modules/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="node_modules/ionicons/dist/css/ionicons.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="css/skins/skin-red.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,7 +60,7 @@ desired effect
 |---------------------------------------------------------|
 -->
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-red sidebar-mini">
   <div class="wrapper">
 
     <!-- Main Header -->
@@ -65,9 +69,9 @@ desired effect
       <!-- Logo -->
       <a href="index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>S</b>CRM</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg"><b>Segurin</b>CRM</span>
       </a>
 
       <!-- Header Navbar -->
@@ -184,13 +188,12 @@ desired effect
                 <!-- The user image in the navbar-->
                 <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">Alexander Pierce</span>
+                <span class="hidden-xs">Manuel></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
                   <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                   <p>
                     Alexander Pierce - Web Developer
                     <small>Member since Nov. 2012</small>
@@ -242,13 +245,13 @@ desired effect
             <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p>Alexander Pierce</p>
+            <p><?php echo $_SESSION['name']; ?></p>
             <!-- Status -->
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
 
-        <!-- search form (Optional) -->
+        <!-- search form (Optional)
         <form action="#" method="get" class="sidebar-form">
           <div class="input-group">
             <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -258,23 +261,25 @@ desired effect
             </span>
           </div>
         </form>
-        <!-- /.search form -->
+         /.search form -->
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">HEADER</li>
           <!-- Optionally, you can add icons to the links -->
-          <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-          <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+          <li class="active"><a href="crm.php" id="Inicio"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
+          <li><a href="#" id="Dashboard"><i class="fa fa-line-chart"></i> <span>Dashboard</span></a></li>
           <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+            <a href="#"><i class="fa fa-table"></i> <span>Tablas</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
+              <li><a href="#"><i class="fa fa-table"></i>Clientes</a></li>
+              <li><a href="#"><i class="fa fa-table"></i>Contratos</a></li>
+                <li><a href="#"><i class="fa fa-table"></i>Compañias</a></li>
+                  <li><a href="#"><i class="fa fa-table"></i>Reportes</a></li>
             </ul>
           </li>
         </ul>
@@ -288,61 +293,21 @@ desired effect
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Page Header
-          <small>Optional description</small>
+          Inicio
+          <small>informacion</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-          <li class="active">Here</li>
+          <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+          <li class="active">Aqui</li>
         </ol>
       </section>
 
       <!-- Main content -->
-      <div class="chart-container" style="position: relative; height:20vh; width:40vw">
-        <section class="content container-fluid">
+      <div class="chart-container">
+        <section class="content container-fluid" id="central">
           <!--------------------------
             | Your Page Content Here |
           -------------------------->
-          <canvas id="myChart"></canvas>
-          <script>
-            var ctx = document.getElementById("myChart").getContext('2d');
-          var myChart = new Chart(ctx, {
-              type: 'line',
-              data: {
-                  labels: ["Numero de Clientes ", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                  datasets: [{
-                      label: '# of Votes',
-                      data: [6, 19, 3, 5, 2, 3],
-                      backgroundColor: [
-                          'rgba(255, 99, 132, 0.2)',
-                          'rgba(54, 162, 235, 0.2)',
-                          'rgba(255, 206, 86, 0.2)',
-                          'rgba(75, 192, 192, 0.2)',
-                          'rgba(153, 102, 255, 0.2)',
-                          'rgba(255, 159, 64, 0.2)'
-                      ],
-                      borderColor: [
-                          'rgba(255,99,132,1)',
-                          'rgba(54, 162, 235, 1)',
-                          'rgba(255, 206, 86, 1)',
-                          'rgba(75, 192, 192, 1)',
-                          'rgba(153, 102, 255, 1)',
-                          'rgba(255, 159, 64, 1)'
-                      ],
-                      borderWidth: 1
-                  }]
-              },
-              options: {
-                  scales: {
-                      yAxes: [{
-                          ticks: {
-                              beginAtZero:true
-                          }
-                      }]
-                  }
-              }
-          });
-          </script>
         </section>
       </div>
       <!-- /.content -->
@@ -442,6 +407,8 @@ desired effect
 
   <!-- jQuery 3 -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- Calls to Jquery Refresh -->
+  <script src="js/calls.js" charset="utf-8"></script>
   <!-- Bootstrap 3.3.7 -->
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <!-- AdminLTE App -->
@@ -449,6 +416,7 @@ desired effect
   <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+
 </body>
 
 </html>
