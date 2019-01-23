@@ -2,8 +2,6 @@
 
 <!-- jQuery 3 -->
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-<!-- Calls to Jquery Refresh -->
-<script src="js/calls.js" charset="utf-8"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->

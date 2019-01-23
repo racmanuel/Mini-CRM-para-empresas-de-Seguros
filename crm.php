@@ -366,6 +366,8 @@ desired effect
   </div>
   <!-- ./wrapper -->
 <?php include 'body.php'; ?>
+<!-- Calls to Jquery Refresh -->
+<script src="js/calls.js" charset="utf-8"></script>
 </body>
 
 </html>
