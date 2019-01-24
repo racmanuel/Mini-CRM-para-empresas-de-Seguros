@@ -271,6 +271,7 @@ desired effect
           <!--------------------------
             | Your Page Content Here |
           -------------------------->
+          
         </section>
       </div>
       <!-- /.content -->
