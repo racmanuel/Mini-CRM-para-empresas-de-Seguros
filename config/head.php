@@ -7,6 +7,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <head>
   <meta charset="utf-8">
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#EC3224">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#EC3224">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#EC3224">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>SegurinCRM</title>
   <!-- Tell the browser to be responsive to screen width -->
@@ -22,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="css/skins/skin-red.min.css">
+  <link rel="stylesheet" href="css/skins/skin-blue.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,6 +39,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <!-- ChartJS -->
-  <script src="node_modules/chart.js/dist/Chart.js"></script>
+  <!-- Datatables-->
+  <link rel="stylesheet" href="node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css">
 </head>

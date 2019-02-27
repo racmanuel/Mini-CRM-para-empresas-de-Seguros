@@ -11,28 +11,21 @@ session_start();
 
 
 <?php
-
 	// Connection info. file
 	include 'conn.php';
-
 	// Connection variables
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
 	// Check connection
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
-
 	// data sent from form login.html
 	$email = $_POST['email'];
 	$password = $_POST['password'];
-
 	// Query sent to database
-	$result = mysqli_query($conn, "SELECT Email, Password, Name FROM root WHERE Email = '$email'");
-
+	$result = mysqli_query($conn, "SELECT Email, Password, Name, img_profile FROM root WHERE Email = '$email'");
 	// Variable $row hold the result of the query
 	$row = mysqli_fetch_assoc($result);
-
 	// Variable $hash hold the password hash on database
 	$hash = $row['Password'];
 
@@ -46,9 +39,11 @@ session_start();
 		$_SESSION['loggedin'] = true;
 		$_SESSION['name'] = $row['Name'];
     $_SESSION['email'] = $row['Email'];
+    $_SESSION['image'] = $row['img_profile'];
 		$_SESSION['start'] = time();
 		$_SESSION['expire'] = $_SESSION['start'] + (1 * 60) ;
-		header('Location: crm.php');
+  		header('Location: crm.php');
+
 	} else {
 		echo "
     <div class='login-box-body'>

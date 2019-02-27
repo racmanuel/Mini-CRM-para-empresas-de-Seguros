@@ -1,11 +1,14 @@
 $(document).ready(function() {
-  $("#central").load('home.php');
-  $('#Dashboard').on('click', function() {
-    $("#central").load('Dashboard.php');
-    return false;
-  })
-  $('#Inicio').on('click', function() {
-    $("#central").load('home.php');
-    return false;
-  })
+  $("#Clientes").click(function() {
+    $("#central").load("views/Clientes.php");
+  });
+  $("#Companias").click(function() {
+    $("#central").load("views/Companias.php");
+  });
+  $("#Reportes").click(function() {
+    $("#central").load("views/Reportes.php");
+  });
+  $("#Pruebas").click(function() {
+    $("#central").load("views/chart.php");
+  });
 });
