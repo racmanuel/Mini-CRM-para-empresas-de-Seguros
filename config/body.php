@@ -6,6 +6,8 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/demo.js"></script>
 <!-- ChartJS -->
 <script src="node_modules/chart.js/dist/Chart.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

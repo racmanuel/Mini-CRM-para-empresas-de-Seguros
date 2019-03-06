@@ -18,7 +18,7 @@ include 'conexion.php';
     $clientes_sin = $statement_clients->fetchColumn();
     return $clientes_sin;
   }
-  
+
   function Clientes_Tabla(){
     $statement_ctable=$GLOBALS['conect']->prepare("SELECT * FROM clientes");
     $statement_ctable->execute();
@@ -31,6 +31,7 @@ include 'conexion.php';
     $number_of_rows_company = $statement_company->fetchColumn();
     return $number_of_rows_company;
   }
+
   function total_reportes(){
     $statement_reports=$GLOBALS['conect']->prepare("SELECT COUNT(*) FROM reporte");
     $statement_reports->execute();
@@ -72,6 +73,57 @@ include 'conexion.php';
     $statement->execute();
     $dano=$statement->fetchColumn();
     return $dano;
+  }
+  function Subscriptos(){
+    $statement=$GLOBALS['conect']->prepare("SELECT SUM(Costo)FROM suscripcion");
+    $statement->execute();
+    $costos=$statement->fetchColumn();
+    return $costos;
+  }
+  function Subscriptos_Count(){
+    $statement=$GLOBALS['conect']->prepare("SELECT Id_Company, count(*) as personas_por_company FROM suscripcion GROUP BY Id_Company");
+    $statement->execute();
+    $costos=$statement->fetchColumn();
+    return $costos;
+  }
+  function Reportes_Last(){
+    $statement_ctable=$GLOBALS['conect']->prepare("SELECT * FROM reporte ORDER BY Folio DESC LIMIT 5");
+    $statement_ctable->execute();
+    $data=$statement_ctable->fetchAll(PDO::FETCH_OBJ);
+    return $data;
+  }
+  function Promedio_Danos_Bajo(){
+    $statement_ctable=$GLOBALS['conect']->prepare("SELECT COUNT(*) FROM reporte WHERE Nivel_Dano='leve'");
+    $statement_ctable->execute();
+    $data=$statement_ctable->fetchColumn();
+    $porcentaje=$data/100;
+    return $porcentaje;
+  }
+  function Promedio_Danos_Medio(){
+    $statement_ctable=$GLOBALS['conect']->prepare("SELECT COUNT(*) FROM reporte WHERE Nivel_Dano='moderado'");
+    $statement_ctable->execute();
+    $data=$statement_ctable->fetchColumn();
+    $porcentaje=$data/100;
+    return $porcentaje;
+  }
+  function Promedio_Danos_Alto(){
+    $statement_ctable=$GLOBALS['conect']->prepare("SELECT COUNT(*) FROM reporte WHERE Nivel_Dano='perdida total'");
+    $statement_ctable->execute();
+    $data=$statement_ctable->fetchColumn();
+    $porcentaje=$data/100;
+    return $porcentaje;
+  }
+  function Numero_Usuarios(){
+    $statement_ctable=$GLOBALS['conect']->prepare("SELECT COUNT(*) FROM root");
+    $statement_ctable->execute();
+    $data=$statement_ctable->fetchColumn();
+    return $data;
+  }
+  function Usuarios(){
+    $statement_ctable=$GLOBALS['conect']->prepare("SELECT * FROM root");
+    $statement_ctable->execute();
+    $data=$statement_ctable->fetchAll(PDO::FETCH_OBJ);
+    return $data;
   }
 
  ?>

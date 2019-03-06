@@ -56,19 +56,17 @@ include '../backend/Consultas.php';
       <script>
         var ctx = document.getElementById("cls");
         var myChart = new Chart(ctx, {
-          type: 'doughnut',
+          type: 'dognout',
           data: {
-            labels: ["Clientes con Seguro", "Clientes sin Seguro"],
+            labels: ["Companias con Subscripcion", "Clientes sin Seguro"],
             datasets: [{
               label: '# of Votes',
-              data: [<?php print clientes_con_seguro(); ?>, <?php print clientes_sin_seguro(); ?>],
+              data: [<?php print total_companias(); ?>],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
+                'rgba(255, 99, 132, 0.2)'
               ],
               borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)'
+                'rgba(255,99,132,1)'
               ],
               borderWidth: 2
             }]
