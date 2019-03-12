@@ -33,30 +33,20 @@ include '../backend/Consultas.php';
       </div>
       <div class="box-body">
         <div class="chart">
-          <canvas id="rep" style="height: 200px; width: 80px;"></canvas>
+          <canvas id="rep" style="height: 600px; width: 250px;"></canvas>
           <script>
             var ctx = document.getElementById("rep");
             var myChart = new Chart(ctx, {
-              type: 'line',
+              type: 'bar',
               data: {
                 labels: ["Daño Total", "Daño Moderado", "Daño Bajo"],
                 datasets: [{
                   label:  ['# de Reportes'],
-                  data: [{
-                     x: 10,
-                     y: 6
-                      }, {
-                     x: 15,
-                     y: 10
-                   }, {
-                     x: 2,
-                     y: 5
-                   }
-                ],
+                  data: [<?php print reportes_nivel_dano_total(); ?>,<?php print reportes_nivel_dano_moderado(); ?>,<?php print reportes_nivel_dano_leve(); ?>],
                   backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(182, 54, 235, 0.2)'
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(182, 54, 235, 1)'
                   ],
                   borderColor: [
                     'rgba(255,99,132,1)',

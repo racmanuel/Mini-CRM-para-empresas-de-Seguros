@@ -49,7 +49,7 @@ include '../backend/Consultas.php';
 </div>
 <div class="box box-primary">
   <div class="box-header with-border">
-    <h3 class="box-title">Clientes/Con y Sin Seguro</h3>
+    <h3 class="box-title">Subscripciones</h3>
   </div>
   <div class="box-body">
     <div class="chart">
@@ -59,15 +59,17 @@ include '../backend/Consultas.php';
         var myChart = new Chart(ctx, {
           type: 'doughnut',
           data: {
-            labels: ["Companias con Subscripcion", "Clientes sin Seguro"],
+            labels: ["Subscripciones de Companias","Companias sin Subscripcion"],
             datasets: [{
               label: '# of Votes',
-              data: [<?php print total_companias(); ?>],
+              data: [<?php print total_susbcripciones(); ?>, 8],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(0, 71, 255, 1)',
+                'rgba(112, 255, 0, 1)'
               ],
               borderColor: [
-                'rgba(255,99,132,1)'
+                'rgba(0, 33, 255, 1)',
+                'rgba(82, 255, 0, 1)'
               ],
               borderWidth: 2
             }]

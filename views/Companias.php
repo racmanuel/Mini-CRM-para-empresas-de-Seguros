@@ -48,7 +48,7 @@ include '../backend/Consultas.php';
 </div>
 <div class="box box-primary">
   <div class="box-header with-border">
-    <h3 class="box-title">Clientes/Con y Sin Seguro</h3>
+    <h3 class="box-title">Companias/Clientes</h3>
   </div>
   <div class="box-body">
     <div class="chart">
@@ -56,30 +56,24 @@ include '../backend/Consultas.php';
       <script>
         var ctx = document.getElementById("cls");
         var myChart = new Chart(ctx, {
-          type: 'dognout',
+          type: 'doughnut',
           data: {
-            labels: ["Companias con Subscripcion", "Clientes sin Seguro"],
+            labels: ["Companias","Clientes"],
             datasets: [{
               label: '# of Votes',
-              data: [<?php print total_companias(); ?>],
+              data: [<?php print total_companias();?>, <?php print total_clientes(); ?>],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(255, 99, 132, 1)',
+                'rgb(235, 255, 0)'
               ],
               borderColor: [
-                'rgba(255,99,132,1)'
+                'rgba(255, 0, 54, 1)',
+                'rgba(255, 222, 0, 1)'
               ],
               borderWidth: 2
             }]
           },
-          options: {
-            scales: {
-              yAxes: [{
-                ticks: {
-                  beginAtZero: true
-                }
-              }]
-            }
-          }
+          
         });
       </script>
     </div>

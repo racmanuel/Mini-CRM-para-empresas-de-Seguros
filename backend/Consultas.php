@@ -125,5 +125,29 @@ include 'conexion.php';
     $data=$statement_ctable->fetchAll(PDO::FETCH_OBJ);
     return $data;
   }
+  function Ubicacion_Companias(){
+    $statement=$GLOBALS['conect']->prepare("SELECT Ubicacion FROM company");
+    $statement->execute();
+    $data=$statement->fetchAll(PDO::FETCH_OBJ);
+    return $data;
+  }
+  function Companias(){
+    $statement=$GLOBALS['conect']->prepare("SELECT Id,Nombre FROM company");
+    $statement->execute();
+    $data=$statement->fetchAll(PDO::FETCH_OBJ);
+    return $data;
+  }
+  function Folios_Seguro(){
+    $statement=$GLOBALS['conect']->prepare("SELECT Folio FROM seguro");
+    $statement->execute();
+    $data=$statement->fetchAll(PDO::FETCH_OBJ);
+    return $data;
+  }
+  function Ubicacion(){
+    $statement=$GLOBALS['conect']->prepare("SELECT Ubicacion FROM reporte");
+    $statement->execute();
+    $data=$statement->fetchAll(PDO::FETCH_OBJ);
+    return $data;
+  }
 
  ?>

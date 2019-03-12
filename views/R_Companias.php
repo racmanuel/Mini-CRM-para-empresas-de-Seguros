@@ -1,42 +1,41 @@
-<div class="box box-success">
+<?php include '../backend/Consultas.php'; ?>
+<div class="box box-info">
   <div class="box-header with-border">
-    <h3 class="box-title">Registrar Clientes</h3>
+    <h3 class="box-title">Registrar Companias</h3>
   </div>
   <div class="box-body">
     <div class="col">
       <!-- form start -->
-      <form class="form-horizontal" action="backend/R_Clientes.php" method="post">
+      <form class="form-horizontal" action="backend/R_Companias.php" method="post">
         <div class="box-body">
           <div class="form-group">
             <label for="Nombre" class="col-sm-2 control-label">Nombre</label>
             <div class="col-xs-4">
               <input type="text" class="form-control" id="Nombre" placeholder="Nombre" name="nombre">
             </div>
+            <label for="Ubicacion" class="col-sm-2 control-label">Ubicacion</label>
+            <div class="col-xs-4">
+              <select class="form-control" name="ubicacion" id="Ubicacion">
+                <?php foreach (Ubicacion_Companias() as $company): ?>
+                  <option value="<?php echo $company->Ubicacion; ?>"><?php echo $company->Ubicacion; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
             <label for="Telefono" class="col-sm-2 control-label">Telefono</label>
             <div class="col-xs-4">
               <input type="tel" class="form-control" id="Telefono" placeholder="Telefono" name="telefono">
             </div>
-          </div>
-          <div class="form-group">
             <label for="Correo" class="col-sm-2 control-label">Correo</label>
             <div class="col-xs-4">
               <input type="email" class="form-control" id="Correo" placeholder="Correo" name="correo">
-            </div>
-            <label for="Fecha" class="col-sm-2 control-label">Fecha de Nacimiento</label>
-            <div class="col-xs-4">
-              <input type="date" class="form-control" value="2017-06-01" name="fecha" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="Password" class="col-sm-2 control-label">Password</label>
-            <div class="col-xs-4">
-              <input type="password" class="form-control" id="Password" placeholder="Password" name="password">
             </div>
           </div>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          <button type="submit" class="btn btn-success pull-right">Registrar</button>
+          <button type="submit" class="btn btn-info pull-right">Registrar</button>
         </div>
         <!-- /.box-footer -->
       </form>
@@ -49,18 +48,18 @@
         <tr>
           <th>Id</th>
           <th>Nombre</th>
+          <th>Ubicacion</th>
           <th>Telefono</th>
           <th>Correo</th>
-          <th>Fecha</th>
         </tr>
       </thead>
       <tfoot>
         <tr>
           <th>Id</th>
           <th>Nombre</th>
+          <th>Ubicacion</th>
           <th>Telefono</th>
           <th>Correo</th>
-          <th>Fecha</th>
         </tr>
       </tfoot>
     </table>
@@ -69,14 +68,12 @@
 </div>
 </div>
 <script type="text/javascript">
-  var dateControl = document.querySelector('input[type="date"]');
-  dateControl.value = '2017-06-01';
   $(document).ready(function() {
     $('#example').DataTable({
       responsive: true,
       "serverSide": true,
       "ajax": {
-        "url": "config/server_side_clientes.php",
+        "url": "config/server_side_companias.php",
         "type": "POST"
       },
       "columns": [{
@@ -86,13 +83,13 @@
           "data": "Nombre"
         },
         {
+          "data": "Ubicacion"
+        },
+        {
           "data": "Telefono"
         },
         {
           "data": "Correo"
-        },
-        {
-          "data": "Fecha"
         }
       ]
     });
