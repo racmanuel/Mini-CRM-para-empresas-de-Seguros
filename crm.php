@@ -1,5 +1,6 @@
 <?php
 session_start();
+include ('verificar.php');
 ?>
 <?php include 'config/head.php'; ?>
 <!--
@@ -22,7 +23,6 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-
 <body class="hold-transition skin-black sidebar-mini">
   <div class="wrapper">
 

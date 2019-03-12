@@ -41,6 +41,7 @@ session_start();
     $_SESSION['email'] = $row['Email'];
     $_SESSION['image'] = $row['img_profile'];
 		$_SESSION['start'] = time();
+		$_SESSION['Rol'] = 'Admin';
 		$_SESSION['expire'] = $_SESSION['start'] + (1 * 60) ;
   		header('Location: crm.php');
 
