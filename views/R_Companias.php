@@ -11,7 +11,7 @@
           <div class="form-group">
             <label for="Nombre" class="col-sm-2 control-label">Nombre</label>
             <div class="col-xs-4">
-              <input type="text" class="form-control" id="Nombre" placeholder="Nombre" name="nombre">
+              <input type="text" class="form-control" id="Nombre" placeholder="Nombre" name="nombre" required>
             </div>
             <label for="Ubicacion" class="col-sm-2 control-label">Ubicacion</label>
             <div class="col-xs-4">
@@ -25,11 +25,11 @@
           <div class="form-group">
             <label for="Telefono" class="col-sm-2 control-label">Telefono</label>
             <div class="col-xs-4">
-              <input type="tel" class="form-control" id="Telefono" placeholder="Telefono" name="telefono">
+              <input type="tel" class="form-control" id="Telefono" placeholder="Telefono" name="telefono" required>
             </div>
             <label for="Correo" class="col-sm-2 control-label">Correo</label>
             <div class="col-xs-4">
-              <input type="email" class="form-control" id="Correo" placeholder="Correo" name="correo">
+              <input type="email" class="form-control" id="Correo" placeholder="Correo" name="correo" required>
             </div>
           </div>
         </div>

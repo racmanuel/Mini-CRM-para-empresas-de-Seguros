@@ -11,11 +11,11 @@
           <div class="form-group">
             <label for="Costo" class="col-sm-2 control-label">Costo</label>
             <div class="col-xs-4">
-              <input type="text" class="form-control" id="Costo" placeholder="$" name="costo">
+              <input type="text" class="form-control" id="Costo" placeholder="$" name="costo" required>
             </div>
             <label for="Caracteristicas" class="col-sm-2 control-label">Caracteristicas</label>
             <div class="col-xs-4">
-              <textarea class="form-control" name="caracteristicas" rows="8" cols="60"></textarea>
+              <textarea class="form-control" name="caracteristicas" rows="8" cols="60" required></textarea>
             </div>
           </div>
           <div class="form-group">

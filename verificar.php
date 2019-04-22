@@ -3,7 +3,7 @@ if($_SESSION)
 {
     if($_SESSION['Rol'] != 'Admin')
     {
-        echo"<script> alert('no tienes los permisos necesarios');  window.location.href=\"http://localhost/crm-master/\"</script>";  
+        echo"<script> alert('no tienes los permisos necesarios');  window.location.href=\"http://localhost/crm-master/\"</script>";
     }
 }
 else

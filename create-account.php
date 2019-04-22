@@ -27,32 +27,34 @@
   </head>
   <body>
     <?php
-
-  	include 'conn.php';
-
+    session_start();
+    include 'conn.php';
   	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
   	// Check connection
   	if (!$conn) {
   		die("Connection failed: " . mysqli_connect_error());
   	}
-
+    if (!isset($_POST['email']))
+    {
+      if($_SESSION['Rol'] == 'Admin')
+      {
+        header("location: crm.php");
+      }
+      else {
+        header("location: index.php");
+      }
+    }
   	// Query to check if the email already exist
   	$checkEmail = "SELECT * FROM root WHERE Email = '$_POST[email]' ";
-
   	// Variable $result hold the connection data and the query
   	$result = $conn-> query($checkEmail);
-
   	// Variable $count hold the result of the query
   	$count = mysqli_num_rows($result);
-
   	// If count == 1 that means the email is already on the database
   	if ($count == 1) {
   	echo "<br />". "That email is already in our database." . "<br />";
-
-  	echo "<a href='index.html'>Please Retrive your Password here</a>.";
+  	echo "<a href='index.php'>Please Retrive your Password here</a>.";
   	} else {
-
   	/*
   	If the email don't exist, the data from the form is sended to the database
   	and the account is created
@@ -60,22 +62,18 @@
   	$name = $_POST['name'];
   	$email = $_POST['email'];
   	$pass = $_POST['password'];
-
   	// The password_hash() function convert the password in a hash before send it to the database
   	$passHash = password_hash($pass, PASSWORD_DEFAULT);
-
   	// Query to send Name, Email and Password hash to the database
   	$query = "INSERT INTO root (Name, Email, Password) VALUES ('$name', '$email', '$passHash')";
-
   	if (mysqli_query($conn, $query)) {
   		echo "<div class='alert alert-success' role='alert'><h3>Your account has been created.</h3>
-  		<a class='btn btn-outline-primary' href='login.html' role='button'>Login</a></div>";
+  		<a class='btn btn-outline-primary' href='index.php' role='button'>Login</a></div>";
   		} else {
   			echo "Error: " . $query . "<br>" . mysqli_error($conn);
   		}
   	}
   	mysqli_close($conn);
   	?>
-
   </body>
 </html>

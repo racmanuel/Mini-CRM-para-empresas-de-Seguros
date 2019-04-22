@@ -29,17 +29,17 @@
           <div class="form-group">
             <label for="Detalles" class="col-sm-2 control-label">Detalles</label>
             <div class="col-xs-4">
-              <textarea class="form-control" name="detalles" rows="8" cols="50"></textarea>
+              <textarea class="form-control" name="detalles" rows="8" cols="50" required></textarea>
             </div>
             <label for="Fecha" class="col-sm-2 control-label">Fecha</label>
             <div class="col-xs-4">
-              <input type="date" class="form-control" value="2017-06-01" name="fecha" />
+              <input type="date" class="form-control" value="2017-06-01" name="fecha"required />
             </div>
           </div>
           <div class="form-group">
             <label for="Hora" class="col-sm-2 control-label">Hora</label>
             <div class="col-xs-4">
-              <input type="text" class="form-control" value="<?php echo date('h:i:s'); ?>" name="hora" disabled/>
+              <input type="text" class="form-control" value="<?php echo date('h:i:s'); ?>" name="hora" disabled />
             </div>
             <label for="Ubicacion" class="col-sm-2 control-label">Ubicacion</label>
             <div class="col-xs-4">
