@@ -1,12 +1,12 @@
 # Mini CRM for enterprise of insurance
  Mini customer relationship management system for insurance companies with PHP and AdminLTE with ChartJS, Datatables, to approve the subject of Systems and Database Types.
  
-- - - - -  - - - - - - - - - - - Mini CRM - para empresas de Seguros- - - - - - - - - - - -
+# Mini CRM - para empresas de Seguros
 Descripcion:
 Mini sistema de gestión de relaciones con clientes para compañías de seguros con PHP y AdminLTE con ChartJS, Datatables, para aprobar el la materia de base de datos y desarrollo web.
 
 El modelo de la base de datos es la sigueinte:
-
+https://user-images.githubusercontent.com/25874893/63184982-6f473400-c01e-11e9-9a4f-cddf747e2761.PNG
 
 EL sistema es de codigo abierto, puede ser utilizado para empresas o uso personal.
 
