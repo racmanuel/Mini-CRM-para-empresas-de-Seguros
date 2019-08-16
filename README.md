@@ -1,1 +1,1 @@
-# crm-master
+# Mini CRM for enterprise of insurance
