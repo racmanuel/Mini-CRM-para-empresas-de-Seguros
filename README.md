@@ -8,7 +8,7 @@ Mini sistema de gestión de relaciones con clientes para compañías de seguros 
 El modelo de la base de datos es la sigueinte:
 ![BD](https://user-images.githubusercontent.com/25874893/63184982-6f473400-c01e-11e9-9a4f-cddf747e2761.PNG)
 
-EL sistema es de codigo abierto, puede ser utilizado para empresas o uso personal.
+¡ALERTA! Este es un proyecto escolar para la clase de desarrollo web con PHP y Base de Datos, no usar en un entorno de produccion.
 
 INSTALACIÓN
 
