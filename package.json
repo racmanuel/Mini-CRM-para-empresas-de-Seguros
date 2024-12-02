@@ -13,7 +13,7 @@
   "author": "Manuel Ramirez Coronel,Kevin Orlando Nava Huitron, Jonathan Othoniel Vargas Armendariz",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.4.0",
+    "bootstrap": "^3.4.1",
     "chart.js": "^2.7.3",
     "datatables.net-bs": "^1.10.19",
     "fastclick": "^1.0.6",
